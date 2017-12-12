@@ -1,3 +1,5 @@
+filetype plugin on
+
 " TAB settings
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
@@ -31,7 +33,11 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Visual Indenting
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -59,3 +65,5 @@ map <C-m> :TagbarToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Visual Indenting
+let g:indent_guides_enable_on_vim_startup = 1
