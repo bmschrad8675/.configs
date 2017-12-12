@@ -1,16 +1,11 @@
-filetype plugin on
+set nocompatible
+syntax on
+set nowrap
+set encoding=utf8
 
-" TAB settings
-set tabstop=4       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
+" Disable file type for plugins
+filetype off                  " requiredfiletype plugin on
 
-set shiftwidth=4    " Indents will have a width of 4
-
-set softtabstop=4   " Sets the number of columns for a TAB
-
-set expandtab       " Expand TABs to spaces"
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -52,8 +47,63 @@ Plug 'mxw/vim-jsx'"
 " Tagbar
 Plug 'majutsushi/tagbar'
 
+" Themes
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ajh17/Spacegray.vim'
+
 " Initialize plugin system
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""
+" Configuration Section
+"""""""""""""""""""""""""""""""""""""
+
+" Set filetype plugin back to on
+filetype plugin on
+
+" Show linenumbers
+set number
+set ruler
+
+" Set Proper Tabs
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+
+" Always display the status line
+set laststatus=2
+
+" Enable Elite mode, No ARRRROWWS!!!!
+let g:elite_mode=1
+
+" Enable highlighting of the current line
+set cursorline
+
+" Theme and Styling 
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set t_Co=256
+set background=dark
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme spacegray
+" colorscheme spacemacs-theme
+ 
+let g:spacegray_underline_search = 1
+let g:spacegray_italicize_comments = 1
+
+" Vim-Airline Configuration
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1 
+let g:airline_theme='hybrid'
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 " TAB settings
 
 """"""""""""""""""""""""""
 " Mappings configuration "
