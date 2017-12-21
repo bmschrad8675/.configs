@@ -32,7 +32,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Visual Indenting
-Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -46,6 +47,12 @@ Plug 'mxw/vim-jsx'"
 
 " Tagbar
 Plug 'majutsushi/tagbar'
+
+" Linter
+Plug 'w0rp/ale'
+
+" Virtual Env
+Plug 'jmcantrell/vim-virtualenv'
 
 " Themes
 Plug 'ryanoasis/vim-devicons'
@@ -116,4 +123,11 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Visual Indenting
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indentLine_setColors = 0
+"call clearmatches()
+"let g:indent_guides_enable_on_vim_startup = 1
+"let indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=236
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=256
+"let indent_guides_color_change_percent = 10
+"let indent_guides_guide_size = 0
